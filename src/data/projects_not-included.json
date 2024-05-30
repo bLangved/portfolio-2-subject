@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pokedex4life",
+    "image": "/src/images/cards/pokedex4life-preview.jpg",
+    "imageAlt": "A web-based Pokédex showing many different Pokémons",
+    "title": "Pokedex4life",
+    "completed": "March 2024",
+    "github": "https://github.com/bLangved/Cross-course-remake",
+    "live_link": "https://pokedex4life.netlify.app/",
+    "content": "An online Pokédex for checking out all existing Pokémon. Search up the Pokémon you like, or browse through different generations. Created in collaboration with Michael River Nilsson, which I studied with.",
+    "tech_stack": "HTML, CSS, Javascript, Bootstrap",
+    "colab_link": "https://github.com/RiverMichael"
+  }
+]

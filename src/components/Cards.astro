@@ -1,0 +1,16 @@
+---
+const { cardData } = Astro.props;
+---
+
+<article id={`projectCard${cardData.id}`}>
+  <a href=`/projects/${cardData.id}`>
+    <img
+      src={cardData.image || '/images/projects/placeholder-img.jpg'}
+      alt={cardData.imageAlt || 'Project image'}
+      width={300}
+      height={150}
+      loading="lazy"
+    />
+  </a>
+  <h3>{cardData.title}</h3>
+</article>

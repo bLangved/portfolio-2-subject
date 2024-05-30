@@ -1,0 +1,43 @@
+{
+  "name": "portfolio 2",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portfolio page",
+  "scripts": {
+    "test": "node src/**/*.",
+    "format": "prettier -w src/**/*.",
+    "watch": "sass --watch src/scss/style.scss src/css/style.css",
+    "astro": "astro",
+    "preview": "astro preview",
+    "build": "astro build",
+    "start": "astro dev --host",
+    "dev": "concurrently \"npm run watch\" \"astro dev --host\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bLangved/Portfolio-2-subject.git"
+  },
+  "keywords": [
+    "frontend",
+    "portfolio",
+    "web",
+    "development"
+  ],
+  "author": "Bjørnar Heian Langved",
+  "license": "SEE LICENSE IN license.txt",
+  "bugs": {
+    "url": "https://github.com/bLangved/Portfolio-2-subject/issues"
+  },
+  "homepage": "https://github.com/bLangved/Portfolio-2-subject#readme",
+  "dependencies": {
+    "@astrojs/netlify": "^4.1.1"
+  },
+  "devDependencies": {
+    "astro": "^4.4.5",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.4",
+    "sass": "^1.69.7",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
+  }
+}

@@ -1,0 +1,33 @@
+// Global color variables
+:root {
+  --alt-color-1: rgb(250, 95, 10);
+  --shadow-color-1: rgb(100, 100, 100);
+}
+
+html {
+  --banner-logo: url(/images/logo/logoDark.png);
+  --body-color-theme: rgb(243, 243, 243);
+  --main-color-theme: white;
+  --footer-color-theme: rgb(45, 45, 45);
+  --subfooter-color-theme: rgb(30, 30, 30);
+  --color-theme: rgb(50, 50, 50);
+  --contrast-color-theme: rgb(70, 70, 70);
+  --color-theme-reverse: white;
+  --contrast-color-theme-reverse: black;
+  --portrait-background: rgb(223, 204, 172);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --banner-logo: url(/images/logo/logoLight.png);
+    --body-color-theme: #16191d;
+    --main-color-theme: rgb(50, 50, 50);
+    --footer-color-theme: rgb(235, 235, 235);
+    --subfooter-color-theme: rgb(245, 245, 245);
+    --color-theme: rgb(245, 245, 245);
+    --contrast-color-theme: rgb(225, 225, 225);
+    --color-theme-reverse: rgb(50, 50, 50);
+    --contrast-color-theme-reverse: rgb(230, 230, 230);
+    --portrait-background: rgb(171, 148, 119);
+  }
+}

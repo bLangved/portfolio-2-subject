@@ -1,0 +1,79 @@
+[
+  {
+    "id": "project_exam_2",
+    "image": "/images/projects/holidaze-preview.jpg",
+    "imageAlt": "A booking site showing venues you can book for a holiday trip",
+    "title": "Holidaze",
+    "completed": "May 2024",
+    "github": "https://github.com/bLangved/project-exam-2",
+    "live_link": "https://bhlweb-holidaze.netlify.app",
+    "content": "My final project exam where I created a booking site called Holidaze. Users can search freely, or register an account for making bookings, or become a venue manager for administrating their own venues.",
+    "tech_stack": ["sass", "javascript", "react", "bootstrap"]
+  },
+  {
+    "id": "project_exam_1",
+    "image": "/images/projects/pe1-preview.jpg",
+    "imageAlt": "A blog of guitar related topics",
+    "title": "Fretboard Haven",
+    "completed": "May 2023",
+    "github": "https://github.com/Noroff-FEU-Assignments/project-exam-1-bLangved",
+    "live_link": "https://projectexam1-bhl.netlify.app/",
+    "content": "A project exam where I was supposed to create a blog website with posts about a topic of my choice. The blog is about guitar-related topics. Data is created in Wordpress, and retrieved using the REST API.",
+    "tech_stack": ["html", "css", "javascript", "wordpress"]
+  },
+  {
+    "id": "noroff_duty",
+    "image": "/images/projects/duty_noroff-preview.jpg",
+    "imageAlt": "Displaying which teachers are available for support",
+    "title": "Noroff duty rotation",
+    "completed": "February 2024",
+    "github": "https://github.com/bLangved/Noroff-teacher-rotation-app?tab=readme-ov-file",
+    "live_link": "https://duty.noroff.dev/",
+    "content": "A simple webapp for checking which teacher is available for student-support on different days. Created for Noroff - School of technology and digital media",
+    "tech_stack": ["html", "sass", "javascript"]
+  },
+  {
+    "id": "web_calculator",
+    "image": "/images/projects/web_calculator-preview.png",
+    "imageAlt": "An online calculator",
+    "title": "An online Calculator",
+    "completed": "February 2024",
+    "github": "https://github.com/bLangved/Pokemon-Pokedex",
+    "live_link": "https://bhlweb-webcalculator.netlify.app/",
+    "content": "An online calculator for simple calculations.",
+    "tech_stack": ["html", "sass", "javascript"]
+  },
+  {
+    "id": "cross_course_project",
+    "image": "/images/projects/ccp-preview.jpg",
+    "imageAlt": "A game storefront",
+    "title": "Game Hub",
+    "completed": "March 2023",
+    "github": "https://github.com/bLangved/Cross-course-remake",
+    "live_link": "https://bhlweb-gamehub.netlify.app/",
+    "content": "A school assignment where I was supposed to create a website for users to buy and / sell used computer or console games. The games displayed is fetched from the RAWG.IO database. Target audience was people aged 18 to 25, who are interested in computer games.",
+    "tech_stack": ["html", "css", "javascript"]
+  },
+  {
+    "id": "ecommerce_store",
+    "image": "/images/projects/ecommerce-preview.jpg",
+    "imageAlt": "An ecommerce website displaying a toy car",
+    "title": "eCom store",
+    "completed": "April 2024",
+    "github": "https://github.com/bLangved/frontend-frameworks-ca",
+    "live_link": "https://bhlweb-ecommerce.netlify.app/",
+    "content": "A simple e-commerce online store created with React as a school assignment.",
+    "tech_stack": ["sass", "javascript", "react"]
+  },
+  {
+    "id": "Webrecords",
+    "image": "/images/projects/webrecords-preview.jpg",
+    "imageAlt": "An auction website displaying listings",
+    "title": "Webrecords",
+    "completed": "December 2023",
+    "github": "https://github.com/bLangved/Semester-Project-2",
+    "live_link": "https://bhlweb-webrecords.netlify.app/",
+    "content": "A simple online auction site created as a semester project.",
+    "tech_stack": ["sass", "bootstrap", "javascript"]
+  }
+]

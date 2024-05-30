@@ -1,0 +1,37 @@
+---
+import '/src/scss/style.scss';
+import SiteHead from '../../components/SiteHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import projects from '../../data/projects.json';
+import CardSelected from '../../components/CardSelected.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const projectId = Astro.params.id;
+const selectedProject = projects.find((project) => project.id === projectId);
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <SiteHead
+    title="Project"
+    description=`Bhlweb project: ${selectedProject.title}. ${selectedProject.content}`
+  />
+
+  <body id="project">
+    <div id="overlayEffect"></div>
+
+    <SiteHeader />
+
+    <div class="main-wrapper-project">
+      <main id="main">
+        <CardSelected cardData={selectedProject} />
+      </main>
+    </div>
+
+    <SiteFooter />
+
+    <script src="/src/js/components/colorSchemeSwitcher.js"></script>
+    <script src="/src/js/components/activeSite.js"></script>
+    <script src="/src/js/components/hamburgerMenu.js"></script>
+  </body>
+</html>

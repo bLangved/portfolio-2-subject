@@ -1,0 +1,115 @@
+<footer id="footer">
+  <section aria-label="Contact information">
+    <h2>Get in touch</h2>
+    <p>
+      Want to collaborate or hire me? <br />
+      Just send me a mail, or contact me on either github or linkedin!
+    </p>
+    <div class="links-wrapper">
+      <div class="links-container">
+        <a
+          href="mailto:post@bhlweb.no"
+          aria-label="Send email to post@bhlweb.no"
+        >
+          <i class="fa-regular fa-envelope fa-xl"></i>
+          <span>post@bhlweb.no</span>
+        </a>
+      </div>
+      <div class="links-container">
+        <a
+          href="https://github.com/bLangved"
+          aria-label="Check out github channel"
+        >
+          <i class="fa-brands fa-github fa-xl"></i>
+          <span>bLangved</span>
+        </a>
+      </div>
+      <div class="links-container">
+        <a
+          href="https://www.linkedin.com/in/bj%C3%B8rnar-heian-langved-23157b246/"
+          aria-label="Check out Linkedin page"
+        >
+          <i class="fa-brands fa-linkedin fa-xl"></i>
+          <span>LinkedIn profile</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="copyright-container">
+    <span>© Copyright 2024 Bhlweb.no</span>
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    background-color: var(--footer-color-theme);
+    color: var(--color-theme-reverse);
+
+    section {
+      padding: 2em;
+
+      @media screen and (min-width: 768px) {
+        max-width: 1000px;
+        margin-inline: auto;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+      }
+      p {
+        margin: 2.5em 0;
+      }
+      .links-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        margin: 2.5em 0;
+
+        .links-container {
+          a {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            gap: 1em;
+            color: var(--color-theme-reverse);
+
+            i {
+              width: 1em;
+              display: grid;
+              place-items: center;
+            }
+
+            &:hover > span {
+              text-decoration: underline var(--alt-color-1);
+            }
+            &:hover > i {
+              color: var(--alt-color-1);
+            }
+          }
+          @media screen and (min-width: 768px) {
+            a {
+              align-items: center;
+              gap: 0.5em;
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .links-wrapper {
+          display: flex;
+          flex-direction: row;
+          gap: 2em;
+        }
+      }
+    }
+  }
+
+  .copyright-container {
+    height: 4em;
+    display: grid;
+    place-items: center;
+    color: var(--color-theme-reverse);
+    background-color: var(--subfooter-color-theme);
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+interface HeadProps {
+  description?: string;
+  title: string;
+}
+
+const { description = 'Default description', title = '' } =
+  Astro.props as HeadProps;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Description" content={description} />
+  <link rel="icon" href="/images/favicon/favicon3232.png" type="image/x-icon" />
+  <title>Bhlweb | {title}</title>
+  <script
+    src="https://kit.fontawesome.com/4652493b4c.js"
+    crossorigin="anonymous"></script>
+</head>

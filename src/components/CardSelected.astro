@@ -1,0 +1,165 @@
+---
+import '../scss/global-styles.scss';
+import '../scss/color-schemes.scss';
+import '../scss/custom-effects.scss';
+const { cardData } = Astro.props;
+
+const techStack = cardData.tech_stack.map((item) => {
+  let logo;
+  switch (item) {
+    case 'html':
+      logo = '/images/techStack/html5-icon.png';
+      break;
+    case 'css':
+      logo = '/images/techStack/css3-icon.png';
+      break;
+    case 'sass':
+      logo = '/images/techStack/sass-icon.png';
+      break;
+    case 'javascript':
+      logo = '/images/techStack/js-icon.png';
+      break;
+    case 'bootstrap':
+      logo = '/images/techStack/bootstrap-icon.png';
+      break;
+    case 'react':
+      logo = '/images/techStack/react-icon.png';
+      break;
+    case 'wordpress':
+      logo = '/images/techStack/wordpress-icon.png';
+      break;
+  }
+  return logo;
+});
+---
+
+<article class="project-container" id=`projectCard${cardData.id}`>
+  <img
+    src={cardData.image || '/images/projects/placeholder-img.jpg'}
+    width={600}
+    height={300}
+    alt={cardData.imageAlt || 'Default alt text'}
+    loading="lazy"
+  />
+  <div class="project-content">
+    <h3>{cardData.title}</h3>
+    <h4>Completed: {cardData.completed}</h4>
+    <h4>Description:</h4>
+    <p>
+      {cardData.content}
+      {
+        cardData.colab_link && (
+          <span>
+            You can check out his work
+            <a href={cardData.colab_link} target="_blank">
+              here
+            </a>
+          </span>
+        )
+      }
+      <h4>Tech stack:</h4>
+      <div class="skills-container">
+        {
+          techStack.map((logo) => (
+            <div class="skill-container">
+              <img src={logo} alt={`Technology logo ${logo}`} />
+            </div>
+          ))
+        }
+      </div>
+    </p>
+    <div class="project-links">
+      <a href={cardData.live_link} target="_blank">Website link</a>
+      <a href={cardData.github} target="_blank">Github repository</a>
+    </div>
+  </div>
+</article>
+
+<style lang="scss">
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      cursor: initial;
+      height: auto;
+      width: 95%;
+      max-width: 70ch;
+      object-fit: cover;
+      border-radius: 0.5em;
+      box-shadow: 0 0 20px var(--shadow-color-1);
+    }
+    @media screen and (min-width: 450px) {
+      img {
+        object-fit: contain;
+      }
+    }
+    .project-content {
+      padding: 0 1em;
+      width: 100%;
+      max-width: 70ch;
+      h3 {
+        font-size: 1.75rem;
+        text-align: center;
+        margin: 2em 0;
+      }
+      h4 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 1.125rem;
+
+        span {
+          a {
+            font-weight: bold;
+            text-decoration: underline var(--alt-color-1);
+          }
+        }
+      }
+      .skills-container {
+        gap: 1em;
+        padding-bottom: 3em;
+        display: flex;
+        align-items: center;
+
+        .skill-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--color-theme);
+          border: 3px solid var(--alt-color-1);
+          box-shadow: 0 0 5px var(--shadow-color-1);
+          img {
+            all: initial;
+            height: 3em;
+            width: 3em;
+            padding: 0.25em;
+          }
+        }
+      }
+      .project-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        margin: 2.5em 0;
+        a {
+          text-align: center;
+          padding: 1em;
+          color: var(--color-theme-reverse);
+          background-color: var(--color-theme);
+
+          &:hover {
+            color: var(--alt-color-1);
+          }
+        }
+      }
+      @media screen and (min-width: 450px) {
+        .project-links {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+</style>

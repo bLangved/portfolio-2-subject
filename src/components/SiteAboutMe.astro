@@ -1,0 +1,37 @@
+<hr />
+
+<section class="bio">
+  <h2 class="heading heading-2">About me</h2>
+  <dl>
+    <dt>Name:</dt>
+    <dd>Bjørnar Heian Langved</dd>
+
+    <dt>Date of birth:</dt>
+    <dd>July 05, 1992</dd>
+
+    <dt>Residence:</dt>
+    <dd>Skien, Norway</dd>
+
+    <dt>Experience:</dt>
+    <dd>2+ years</dd>
+  </dl>
+</section>
+
+<style lang="scss">
+  .bio {
+    dl {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: repeat(4, 4em);
+      margin: 0 auto;
+      max-width: 450px;
+      font-weight: 500;
+      dt {
+        margin: auto auto auto 0;
+      }
+      dd {
+        margin: auto 0 auto auto;
+      }
+    }
+  }
+</style>

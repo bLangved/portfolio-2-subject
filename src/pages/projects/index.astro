@@ -1,0 +1,41 @@
+---
+import '/src/scss/style.scss';
+import SiteHead from '../../components/SiteHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import projects from '../../data/projects.json';
+import Cards from '../../components/Cards.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <SiteHead
+    title="Projects"
+    description="A collection of various projects I have created or collaborated on"
+  />
+
+  <body id="projects">
+    <div id="overlayEffect"></div>
+
+    <SiteHeader />
+
+    <div class="main-wrapper-projects">
+      <main id="main">
+        <h1 class="heading heading-1">Projects</h1>
+        <p>
+          A collection of websites I have created or collaborated on. Everything
+          from school assignments to fun side projects. Check 'em out.
+        </p>
+        <div class="projects-container">
+          {projects.map((card) => <Cards key={card.id} cardData={card} />)}
+        </div>
+      </main>
+    </div>
+
+    <SiteFooter />
+
+    <script src="/src/js/components/colorSchemeSwitcher.js"></script>
+    <script src="/src/js/components/activeSite.js"></script>
+    <script src="/src/js/components/hamburgerMenu.js"></script>
+  </body>
+</html>

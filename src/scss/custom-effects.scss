@@ -1,0 +1,82 @@
+@import './color-schemes.scss';
+
+/* Mixins */
+
+// Underline hover effect on elements
+@mixin underline-effect(
+  $color: var(--alt-color-1),
+  $thickness: 3px,
+  $offset: 6px
+) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $offset;
+    height: $thickness;
+    background: $color;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// Underline styling on active page links
+@mixin underline-active(
+  $color: var(--color-theme),
+  $thickness: 3px,
+  $offset: 6px
+) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $offset;
+    height: $thickness;
+    background: $color;
+  }
+}
+
+/* Diverse effects */
+.visually-hide {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#overlayEffect {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: none;
+}
+
+// Active page reflected on banner navigation
+.active-site {
+  background-color: var(--alt-color-1);
+}
+@media screen and (min-width: 992px) {
+  .active-site {
+    background-color: initial;
+    @include underline-active;
+  }
+}
+
+// When hamburger menu collapse, makes content non-interactive (closes nav instead)
+.nonClickable-element {
+  pointer-events: none;
+}

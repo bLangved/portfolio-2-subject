@@ -1,0 +1,126 @@
+---
+// import { Image } from 'astro:assets';
+const html5Icon = '/images/techStack/html5-icon.png';
+const css3Icon = '/images/techStack/css3-icon.png';
+const sassIcon = '/images/techStack/sass-icon.png';
+const bootstrapIcon = '/images/techStack/bootstrap-icon.png';
+const jsIcon = '/images/techStack/js-icon.png';
+const wordpressIcon = '/images/techStack/wordpress-icon.png';
+const figmaIcon = '/images/techStack/figma-icon.png';
+const githubIcon = '/images/techStack/github-icon.png';
+const gitIcon = '/images/techStack/git-icon.png';
+const trelloIcon = '/images/techStack/trello-icon.png';
+const npmIcon = '/images/techStack/npm-icon.png';
+const reactIcon = '/images/techStack/react-icon.png';
+
+const imageSize = { height: 60, width: 60 };
+---
+
+<hr />
+<section class="skills">
+  <h2 class="heading heading-1">Skills</h2>
+  <div class="skills-container">
+    <a
+      class="skill-container"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+    >
+      <img src={html5Icon} alt="HTML5" {...imageSize} loading="lazy" />
+      <span>HTML5</span>
+    </a>
+    <a
+      class="skill-container"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+    >
+      <img src={css3Icon} alt="CSS3" {...imageSize} loading="lazy" />
+      <span>CSS3</span>
+    </a>
+    <a class="skill-container" href="https://sass-lang.com/">
+      <img src={sassIcon} alt="SASS" {...imageSize} loading="lazy" />
+      <span>SASS</span>
+    </a>
+    <a class="skill-container" href="https://getbootstrap.com/">
+      <img src={bootstrapIcon} alt="Bootstrap" {...imageSize} loading="lazy" />
+      <span>Bootstrap</span>
+    </a>
+    <a class="skill-container" href="https://www.javascript.com/">
+      <img src={jsIcon} alt="Javascript" {...imageSize} loading="lazy" />
+      <span>Javascript</span>
+    </a>
+    <a class="skill-container" href="https://www.wordpress.com/">
+      <img src={wordpressIcon} alt="Wordpress" {...imageSize} loading="lazy" />
+      <span>Wordpress</span>
+    </a>
+    <a class="skill-container" href="https://www.figma.com/">
+      <img src={figmaIcon} alt="Figma" {...imageSize} loading="lazy" />
+      <span>Figma</span>
+    </a>
+    <a class="skill-container" href="https://github.com/">
+      <img src={githubIcon} alt="Github" {...imageSize} loading="lazy" />
+      <span>Github</span>
+    </a>
+    <a class="skill-container" href="https://git-scm.com/">
+      <img src={gitIcon} alt="Git" {...imageSize} loading="lazy" />
+      <span>Git</span>
+    </a>
+    <a class="skill-container" href="https://www.trello.com/">
+      <img src={trelloIcon} alt="Trello" {...imageSize} loading="lazy" />
+      <span>Trello</span>
+    </a>
+    <a class="skill-container" href="https://www.npmjs.com/">
+      <img src={npmIcon} alt="NPM" {...imageSize} loading="lazy" />
+      <span>NPM</span>
+    </a>
+    <a class="skill-container" href="https://react.dev/">
+      <img src={reactIcon} alt="React" {...imageSize} loading="lazy" />
+      <span>React</span>
+    </a>
+  </div>
+</section>
+
+<style lang="scss">
+  .skills {
+    margin-top: 2.5em;
+
+    h2 {
+      text-align: center;
+    }
+
+    .skills-container {
+      background-color: var(--color-theme-reverse);
+      gap: 1em;
+      padding-bottom: 3em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+
+      .skill-container {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        background-color: var(--color-theme);
+        height: 6em;
+        width: 6em;
+        border: 3px solid var(--alt-color-1);
+        box-shadow: 0 0 5px var(--shadow-color-1);
+        img {
+          margin-bottom: 0.25em;
+          height: 3em;
+          width: 3em;
+          object-fit: contain;
+        }
+        span {
+          color: var(--color-theme-reverse);
+        }
+        &:hover {
+          transform: scale(110%);
+          transition: transform 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+</style>

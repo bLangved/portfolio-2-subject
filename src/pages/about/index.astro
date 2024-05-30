@@ -1,0 +1,54 @@
+---
+import '/src/scss/style.scss';
+import SiteHead from '../../components/SiteHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Image from 'astro/components/Image.astro';
+import portrait from '../../images/portrait/portrait1.png';
+import SiteBio from '../../components/SiteBio.astro';
+import SiteWorkExperience from '../../components/SiteWorkExperience.astro';
+import SiteEduAll from '../../components/SiteEduAll.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <SiteHead title="About" description="About Bjørnar Heian Langved" />
+
+  <body id="about">
+    <div id="overlayEffect"></div>
+
+    <SiteHeader />
+
+    <div class="main-wrapper-about">
+      <main id="main">
+        <section class="hero_about">
+          <h1 class="heading heading-1">Resume</h1>
+          <p>
+            My name is Bjørnar Heian Langved, I'm 31 years old, and lives in
+            Skien, Telemark in Norway.
+            <br />
+            I am currently studying frontend-development at Noroff - School of technology
+            and digital media.
+          </p>
+          <div class="hero-img-container">
+            <Image
+              src={portrait}
+              alt="An image of me"
+              height={600}
+              width={600}
+            />
+          </div>
+        </section>
+        <SiteBio />
+        <SiteWorkExperience />
+        <SiteEduAll />
+      </main>
+    </div>
+
+    <SiteFooter />
+
+    <script src="/src/js/components/colorSchemeSwitcher.js"></script>
+    <script src="/src/js/components/activeSite.js"></script>
+    <script src="/src/js/components/hamburgerMenu.js"></script>
+  </body>
+</html>

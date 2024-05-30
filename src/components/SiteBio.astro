@@ -1,0 +1,206 @@
+<hr />
+<article class="bio">
+  <header>
+    <h2 class="heading heading-2">About me</h2>
+    <p class="bio-para">
+      I have been working with sales, primarily sales of consumer electronics a
+      big part of my life, but decided some years ago that I wanted to make a
+      shift. I've been doing creative things since I was young, and wanted to
+      work with something where I could express myself in new ways. This
+      eventually led me into the path of programming languages.
+    </p>
+  </header>
+  <section class="bio-personal">
+    <h3 class="heading heading-3">Personal information</h3>
+    <dl>
+      <dt>Name:</dt>
+      <dd>Bjørnar Heian Langved</dd>
+
+      <dt>Date of birth:</dt>
+      <dd>July 05, 1992</dd>
+
+      <dt>Residence:</dt>
+      <dd>Skien, Norway</dd>
+
+      <dt>Experience:</dt>
+      <dd>2+ years</dd>
+    </dl>
+  </section>
+  <section class="bio-hobbies">
+    <h3 class="heading heading-3">Hobbies I enjoy</h3>
+    <div class="hobbies-container">
+      <button class="hobby" id="gamesBtn">
+        <i class="fa-solid fa-gamepad fa-xl"></i>
+        <span>Gaming</span>
+      </button>
+      <button class="hobby" id="cookingBtn">
+        <i class="fa-solid fa-utensils fa-xl"></i>
+        <span>Cooking</span>
+      </button>
+      <button class="hobby" id="exerciseBtn">
+        <i class="fa-solid fa-person-running fa-xl"></i>
+        <span>Exercise</span>
+      </button>
+      <button class="hobby" id="instrumentsBtn">
+        <i class="fa-solid fa-guitar fa-xl"></i>
+        <span>Playing instruments</span>
+      </button>
+    </div>
+  </section>
+  <div class="para-container" id="containerPara">
+    <p id="gamesPara">
+      I have been playing videogames for as long as I can remember. With friends
+      and by myself. I find the community to be highly social, and today,
+      allmost everyone has some kind of experience or relation to this activity.
+      It's a nice way to keep in touch with people you see rearly (or often!),
+      and a great way to relax, and just have fun!
+    </p>
+    <p id="cookingPara">
+      Since I was little, I allways found cooking fun. My mother has allways
+      liked baking/cooking food, and I guess I picked up the interest from her.
+      Though I may not be a chef, I allways found cooking relaxing, and it's a
+      highly rewarding activity, since you can enjoy what you have been prepping
+      in the kitchen afterwards! Food is also great to share with others, and a
+      nice way to bring people together.
+    </p>
+    <p id="exercisePara">
+      Even though it's something that comes and goes (at least for me), I find
+      jogging, walking and small hiking sessions to be a really nice way to
+      stress down. You also feel very good after a workout session, and it's
+      nice for stimulating your brain, and helps you sleep better as well!
+    </p>
+    <p id="instrumentsPara">
+      Since I became a teenager, I have been playing guitar. I picked up piano a
+      few years after, and playing / creating music by myself or with others is
+      something I really enjoy. It is one of the most important things I do
+      every day to relax and collect my thoughts. I had more or less a break for
+      a few years, but started up again, and it has yet again become something
+      extremely important to me.
+    </p>
+  </div>
+</article>
+
+<style lang="scss">
+  .bio {
+    margin-bottom: 1.5em;
+    header {
+      .bio-para {
+        margin: 0 auto 2em;
+        max-width: 70ch;
+      }
+    }
+    .bio-personal {
+      dl {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, 4em);
+        margin: 0 auto;
+        max-width: 450px;
+        font-weight: 500;
+        dt {
+          margin: auto auto auto 0;
+        }
+        dd {
+          margin: auto 0 auto auto;
+        }
+      }
+    }
+    .bio-hobbies {
+      h3 {
+        margin-bottom: 1.5em;
+      }
+      .hobbies-container {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 0.75em;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 95%;
+        margin: 0 auto;
+
+        @media screen and (min-width: 550px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (min-width: 992px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .hobby {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1em;
+        &:hover {
+          background-color: var(--alt-color-1);
+        }
+        span {
+          display: flex;
+        }
+      }
+    }
+    .para-container {
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      p {
+        margin: 0 1em;
+        max-height: none;
+        max-width: 70ch;
+        display: block;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+      p.active {
+        margin-top: 1em;
+      }
+    }
+  }
+</style>
+<script>
+  interface HobbyContainer {
+    containerId: string;
+    paraId: string;
+    scrollHeight?: string;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const hobbyContainers: HobbyContainer[] = [
+      { containerId: '#gamesBtn', paraId: '#gamesPara' },
+      { containerId: '#cookingBtn', paraId: '#cookingPara' },
+      { containerId: '#exerciseBtn', paraId: '#exercisePara' },
+      { containerId: '#instrumentsBtn', paraId: '#instrumentsPara' },
+    ];
+
+    hobbyContainers.forEach((hobby) => {
+      const container = document.querySelector(
+        hobby.containerId,
+      ) as HTMLElement;
+      const para = document.querySelector(hobby.paraId) as HTMLElement;
+      para.style.maxHeight = 'none';
+      hobby.scrollHeight = para.scrollHeight + 'px';
+      para.style.maxHeight = '0';
+
+      container.addEventListener('click', () => {
+        const isOpen = para.style.maxHeight !== '0px';
+
+        hobbyContainers.forEach((h) => {
+          const p = document.querySelector(h.paraId) as HTMLElement;
+          const c = document.querySelector(h.containerId) as HTMLElement;
+          p.style.maxHeight = '0';
+          p.classList.remove('active');
+          c.style.backgroundColor = '';
+        });
+
+        if (!isOpen) {
+          para.style.maxHeight = para.scrollHeight + 'px';
+          container.style.backgroundColor = 'var(--alt-color-1)';
+          para.classList.add('active');
+        } else {
+          container.style.backgroundColor = '';
+        }
+      });
+    });
+  });
+</script>

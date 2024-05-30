@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Skien",
+			"country": {
+				"code": "NO",
+				"name": "Norway"
+			},
+			"subdivision": {
+				"code": "38",
+				"name": "Vestfold og Telemark"
+			},
+			"timezone": "Europe/Oslo",
+			"latitude": 59.1982,
+			"longitude": 9.6007
+		},
+		"timestamp": 1706541728222
+	}
+}

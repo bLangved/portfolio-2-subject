@@ -1,0 +1,39 @@
+---
+import '/src/scss/style.scss';
+import SiteHead from '../components/SiteHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteHero from '../components/SiteHero.astro';
+import SiteEduWeb from '../components/SiteEduWeb.astro';
+import SiteSkills from '../components/SiteSkills.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteAboutMe from '../components/SiteAboutMe.astro';
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <SiteHead
+    title="Home"
+    description="I am a Frontend developer who lives in Skien, Telemark, and create websites for most needs. Check out my portfolio for previous work, and to learn about what I have to offer."
+  />
+
+  <body id="index">
+    <div id="overlayEffect"></div>
+
+    <SiteHeader />
+
+    <div class="main-wrapper-index">
+      <main id="main">
+        <SiteHero />
+        <SiteEduWeb />
+        <SiteAboutMe />
+        <SiteSkills />
+      </main>
+    </div>
+
+    <SiteFooter />
+
+    <script src="/src/js/components/colorSchemeSwitcher.js"></script>
+    <script src="/src/js/components/activeSite.js"></script>
+    <script src="/src/js/components/hamburgerMenu.js"></script>
+  </body>
+</html>
